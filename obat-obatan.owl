@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontology#"
+     xml:base="http://www.semanticweb.org/ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     
+    <!-- Class Declarations -->
+    <owl:Class rdf:about="#Obat"/>
+    <owl:Class rdf:about="#BahanAktif"/>
+    <owl:Class rdf:about="#IndikasiPenggunaan"/>
+    <owl:Class rdf:about="#EfekSamping"/>
+    <owl:Class rdf:about="#Dosis"/>
+    <owl:Class rdf:about="#InteraksiObat"/>
+    <owl:Class rdf:about="#ProdusenObat"/>
+    
+    <!-- Object Property Declarations -->
+    <owl:ObjectProperty rdf:about="#memilikiBahanAktif"/>
+    <owl:ObjectProperty rdf:about="#memilikiDosis"/>
+    <owl:ObjectProperty rdf:about="#direkomendasikanUntukIndikasi"/>
+    <owl:ObjectProperty rdf:about="#dapatMenyebabkanEfekSamping"/>
+    <owl:ObjectProperty rdf:about="#terdapatInteraksiObat"/>
+    <owl:ObjectProperty rdf:about="#diproduksiOleh"/>
+    
+    <!-- Data Property Declarations -->
+    <owl:DatatypeProperty rdf:about="#memilikiNamaObat"/>
+    <owl:DatatypeProperty rdf:about="#memilikiNamaBahanAktif"/>
+    <owl:DatatypeProperty rdf:about="#memilikiIndikasiPenggunaan"/>
+    <owl:DatatypeProperty rdf:about="#memilikiEfekSamping"/>
+    <owl:DatatypeProperty rdf:about="#memilikiJumlahDosis"/>
+    <owl:DatatypeProperty rdf:about="#memilikiInteraksiObat"/>
+    <owl:DatatypeProperty rdf:about="#memilikiNamaProdusen"/>
+    
+    <!-- Class Assertions -->
+    <owl:NamedIndividual rdf:about="#Paracetamol">
+        <rdf:type rdf:resource="#Obat"/>
+        <memilikiBahanAktif rdf:resource="#ParacetamolBahanAktif"/>
+        <memilikiDosis rdf:resource="#ParacetamolDosis"/>
+        <direkomendasikanUntukIndikasi rdf:resource="#ParacetamolIndikasiPenggunaan"/>
+        <dapatMenyebabkanEfekSamping rdf:resource="#ParacetamolEfekSamping"/>
+        <diproduksiOleh rdf:resource="#PfizerInc"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Ibuprofen">
+        <rdf:type rdf:resource="#Obat"/>
+        <memilikiBahanAktif rdf:resource="#IbuprofenBahanAktif"/>
+        <memilikiDosis rdf:resource="#IbuprofenDosis"/>
+        <direkomendasikanUntukIndikasi rdf:resource="#IbuprofenIndikasiPenggunaan"/>
+        <dapatMenyebabkanEfekSamping rdf:resource="#IbuprofenEfekSamping"/>
+        <diproduksiOleh rdf:resource="#JohnsonJohnson"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Amoxicillin">
+        <rdf:type rdf:resource="#Obat"/>
+        <memilikiBahanAktif rdf:resource="#AmoxicillinBahanAktif"/>
+        <memilikiDosis rdf:resource="#AmoxicillinDosis"/>
+        <direkomendasikanUntukIndikasi rdf:resource="#AmoxicillinIndikasiPenggunaan"/>
+        <dapatMenyebabkanEfekSamping rdf:resource="#AmoxicillinEfekSamping"/>
+        <diproduksiOleh rdf:resource="#NovartisInternationalAG"/>
+    </owl:NamedIndividual>
+    
+    <!-- Individual Declarations -->
+    <owl:NamedIndividual rdf:about="#ParacetamolBahanAktif">
+        <rdf:type rdf:resource="#BahanAktif"/>
+        <memilikiNamaBahanAktif rdf:datatype="&xsd;string">Paracetamol</memilikiNamaBahanAktif>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#IbuprofenBahanAktif">
+        <rdf:type rdf:resource="#BahanAktif"/>
+        <memilikiNamaBahanAktif rdf:datatype="&xsd;string">Ibuprofen</memilikiNamaBahanAktif>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#AmoxicillinBahanAktif">
+        <rdf:type rdf:resource="#BahanAktif"/>
+        <memilikiNamaBahanAktif rdf:datatype="&xsd;string">Amoxicillin</memilikiNamaBahanAktif>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#ParacetamolIndikasiPenggunaan">
+        <rdf:type rdf:resource="#IndikasiPenggunaan"/>
+        <memilikiIndikasiPenggunaan rdf:datatype="&xsd;string">Mengurangi demam</memilikiIndikasiPenggunaan>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#IbuprofenIndikasiPenggunaan">
+        <rdf:type rdf:resource="#IndikasiPenggunaan"/>
+        <memilikiIndikasiPenggunaan rdf:datatype="&xsd;string">Meredakan nyeri</memilikiIndikasiPenggunaan>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#AmoxicillinIndikasiPenggunaan">
+        <rdf:type rdf:resource="#IndikasiPenggunaan"/>
+        <memilikiIndikasiPenggunaan rdf:datatype="&xsd;string">Mengobati infeksi bakteri</memilikiIndikasiPenggunaan>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#ParacetamolEfekSamping">
+        <rdf:type rdf:resource="#EfekSamping"/>
+        <memilikiEfekSamping rdf:datatype="&xsd;string">Sakit perut</memilikiEfekSamping>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#IbuprofenEfekSamping">
+        <rdf:type rdf:resource="#EfekSamping"/>
+        <memilikiEfekSamping rdf:datatype="&xsd;string">Mual</memilikiEfekSamping>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#AmoxicillinEfekSamping">
+        <rdf:type rdf:resource="#EfekSamping"/>
+        <memilikiEfekSamping rdf:datatype="&xsd;string">Ruam kulit</memilikiEfekSamping>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#ParacetamolDosis">
+        <rdf:type rdf:resource="#Dosis"/>
+        <memilikiJumlahDosis rdf:datatype="&xsd;string">500mg</memilikiJumlahDosis>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#IbuprofenDosis">
+        <rdf:type rdf:resource="#Dosis"/>
+        <memilikiJumlahDosis rdf:datatype="&xsd;string">400mg</memilikiJumlahDosis>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#AmoxicillinDosis">
+        <rdf:type rdf:resource="#Dosis"/>
+        <memilikiJumlahDosis rdf:datatype="&xsd;string">250mg</memilikiJumlahDosis>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#ParacetamolIbuprofenInteraksi">
+        <rdf:type rdf:resource="#InteraksiObat"/>
+        <memilikiInteraksiObat rdf:datatype="&xsd;string">Interaksi antara Paracetamol dan Ibuprofen yang dapat meningkatkan risiko perdarahan</memilikiInteraksiObat>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#AmoxicillinIbuprofenInteraksi">
+        <rdf:type rdf:resource="#InteraksiObat"/>
+        <memilikiInteraksiObat rdf:datatype="&xsd;string">Interaksi antara Amoxicillin dan Ibuprofen yang dapat mengurangi efektivitas Amoxicillin</memilikiInteraksiObat>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#PfizerInc">
+        <rdf:type rdf:resource="#ProdusenObat"/>
+        <memilikiNamaProdusen rdf:datatype="&xsd;string">Pfizer Inc.</memilikiNamaProdusen>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#JohnsonJohnson">
+        <rdf:type rdf:resource="#ProdusenObat"/>
+        <memilikiNamaProdusen rdf:datatype="&xsd;string">Johnson &amp; Johnson</memilikiNamaProdusen>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#NovartisInternationalAG">
+        <rdf:type rdf:resource="#ProdusenObat"/>
+        <memilikiNamaProdusen rdf:datatype="&xsd;string">Novartis International AG</memilikiNamaProdusen>
+    </owl:NamedIndividual>
+    
+    <!-- Object Property Assertions -->
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiBahanAktif"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki bahan aktif</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiDosis"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki dosis</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#direkomendasikanUntukIndikasi"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">direkomendasikan untuk indikasi penggunaan</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#dapatMenyebabkanEfekSamping"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">dapat menyebabkan efek samping</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#terdapatInteraksiObat"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">terdapat interaksi obat</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#diproduksiOleh"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">diproduksi oleh</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <!-- Data Property Assertions -->
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiNamaObat"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki nama obat</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiNamaBahanAktif"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki nama bahan aktif</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiIndikasiPenggunaan"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki indikasi penggunaan</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiEfekSamping"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki efek samping</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiJumlahDosis"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki jumlah dosis</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+    
+    <owl:AnnotationAssertion>
+        <owl:subject rdf:resource="#memilikiNamaProdusen"/>
+        <owl:property rdf:resource="#rdfs:label"/>
+        <owl:annotation>
+            <rdf:Description>
+                <rdfs:label rdf:datatype="&xsd;string">memiliki nama produsen</rdfs:label>
+            </rdf:Description>
+        </owl:annotation>
+    </owl:AnnotationAssertion>
+</rdf:RDF>
